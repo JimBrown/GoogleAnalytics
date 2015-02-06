@@ -9,7 +9,7 @@
  *
  */
 
-$plugin_is_filter = 5;
+$plugin_is_filter = 5 | THEME_PLUGIN;
 $plugin_description = gettext("Support for providing Google Analytics tracking");
 $option_interface = "google_analyticsOptions";
 
