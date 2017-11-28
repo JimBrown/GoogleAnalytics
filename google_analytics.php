@@ -24,19 +24,18 @@ function printGoogleAnalyticsHeader() {
 	if (!empty($analyticskey) && ((zp_loggedin() && getOption('admintracking')) || !zp_loggedin())) {
 		?>
 		<script type="text/javascript">
-    /* Google Analytics */
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		ga('create', '<?php echo $analyticskey ?>', 'auto');
-		ga('send', 'pageview');
-
+      /* Google Analytics */
+  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  		ga('create', '<?php echo $analyticskey ?>', 'auto');
+  		ga('send', 'pageview');
 		</script>
 		<?php
 	}
 }
+
 /**
  * Plugin option handling class
  *
@@ -49,19 +48,19 @@ class google_analyticsOptions {
 	}
 
 	function getOptionsSupported() {
-		return array(  gettext('Google Analytics Web Property ID') => array(
-									'order' => 0,
-									'key' => 'analyticsId',
-									'type' => OPTION_TYPE_TEXTBOX,
-									'desc' => gettext("If you're going to be using Google Analytics,").' <a	href="http://www.google.com/analytics/" target="_blank"> '.gettext("get a Web Property ID</a> and enter it here.")
-						),
-						gettext('Enable Admin tracking') => array (
-									'order' => 1,
-									'key' => 'admintracking',
-									'type' => OPTION_TYPE_CHECKBOX,
-									'desc' => gettext('Controls if you want Google Analytics tracking for users logged in as admin. Default is not selected.')
-						),
-		);
+		return array(gettext('Google Analytics Web Property ID') => array(
+  									'order' => 0,
+  									'key' => 'analyticsId',
+  									'type' => OPTION_TYPE_TEXTBOX,
+  									'desc' => gettext("If you're going to be using Google Analytics,").' <a	href="http://www.google.com/analytics/" target="_blank"> '.gettext("get a Web Property ID</a> and enter it here.")
+      						),
+      						gettext('Enable Admin tracking') => array (
+  									'order' => 1,
+  									'key' => 'admintracking',
+  									'type' => OPTION_TYPE_CHECKBOX,
+  									'desc' => gettext('Controls if you want Google Analytics tracking for users logged in as admin. Default is not selected.')
+      						),
+            		);
 	}
 
 	function handleOption($option, $currentValue) {}
