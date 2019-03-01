@@ -42,7 +42,7 @@ function printGoogleAnalyticsHeader() {
  */
 class google_analyticsOptions {
 
-	function google_analyticsOptions() {
+	function __construct() {
 		setOptionDefault('analyticsId', 'UA-xxxxxx-x');
 		setOptionDefault('admintracking', 0);
 	}
